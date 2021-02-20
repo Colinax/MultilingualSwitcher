@@ -1,17 +1,35 @@
-#langmenu { 
-	float :right; 
-	margin-left :auto; 
-	margin-right :auto; 
-	padding :5px; 
-	min-height :0.6em; 
-	text-align :center; 
-	display :block; 
-	vertical-align :middle; 
+#langmenu {
+    float: right;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    min-height: .6em;
+    text-align: center;
+    vertical-align: middle
 }
 
-#langmenu a       {text-decoration:none;}
-#langmenu a:hover {border:0; background:none;}
-#langmenu img     { border :0 ;padding-right:2px;}
-#langmenu a.default img { filter :alpha(opacity=100); -moz-opacity :1.0; opacity :1.0; }
-#langmenu a:hover img   { filter :alpha(opacity=30); -moz-opacity :.3; opacity :.3; }
-#langmenu a.current img { filter :alpha(opacity=30); -moz-opacity :.3; opacity :.3; }
+#langmenu a {
+    text-decoration: none
+}
+
+#langmenu a:hover {
+    border: 0;
+    background: 0 0
+}
+
+#langmenu img {
+    border: 0;
+    padding-right: 2px
+}
+
+#langmenu a.default img {
+    opacity: 1
+}
+
+#langmenu a:hover img {
+    opacity: .3
+}
+
+#langmenu a.current img {
+    opacity: .3
+}

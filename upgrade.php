@@ -1,7 +1,10 @@
 <?php
 //no direct file access
-if(count(get_included_files()) ==1){$z="HTTP/1.0 404 Not Found";header($z);die($z);}
-
+if (count(get_included_files()) ==1) {
+    $z="HTTP/1.0 404 Not Found";
+    header($z);
+    die($z);
+}
 
 include('lang.functions.php');
 
@@ -14,15 +17,13 @@ $field_set = $field_sql->numRows();
 // extract page_id from old format
 $pattern = '/(?<=_)([0-9]{1,11})/s';
 
-$format = $field_sql->fetchRow(MYSQL_ASSOC) ;
+$format = $field_sql->fetchRow(MYSQLI_ASSOC) ;
 
 // upgrade only if old format
-if($format['Type'] == 'varchar(255)' )
-{
+if ($format['Type'] == 'varchar(255)') {
     $sql = 'SELECT `page_code`,`page_id` FROM `'.TABLE_PREFIX.'pages` ORDER BY `page_id`';
     $query_code = $database->query($sql);
-    while( $page  = $query_code->fetchRow(MYSQL_ASSOC))
-    {
+    while ($page  = $query_code->fetchRow(MYSQLI_ASSOC)) {
         preg_match($pattern, $page['page_code'], $array);
         $page_code = $array[0];
         $page_id =  $page['page_id'];
@@ -36,8 +37,6 @@ if($format['Type'] == 'varchar(255)' )
 }
 //
 $directory = dirname(__FILE__).'/'.'info.php';
+
 // update entry in table addons to new version
 load_module($directory, $install = false);
-// Print admin footer
-// $admin->print_footer();
-
