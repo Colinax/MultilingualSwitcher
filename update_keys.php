@@ -32,5 +32,5 @@ if (count($lang_array)) {
 if ($database->is_error()) {
     $admin->print_error($database->get_error(), ADMIN_URL.'/pages/index.php');
 } else {
-    $admin->print_success($MESSAGE['PAGES']['UPDATE_SETTINGS'], ADMIN_URL.'/pages/settings.php?page_id='.$temp_page_id);
+    $admin->print_success($MML['PAGES_UPDATE_SETTINGS'], ADMIN_URL.'/pages/settings.php?page_id='.$temp_page_id);
 }
