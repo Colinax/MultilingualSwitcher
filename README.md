@@ -3,18 +3,18 @@
 Basically WBCE does not need Multilingual for creating multilanguage pages. Just activate multilanguage support in settings and generate a directory structure like this.
 
 ````
-	EN
-	|-Home
-	|-Blog
-	|-About
-	DE
-	|-Start
-	|-Blog
-	|-Über Mich
-	FR
-	.
-	.
-	.
+EN
+|-Home
+|-Blog
+|-About
+DE
+|-Start
+|-Blog
+|-Über Mich
+FR
+.
+.
+.
 ````
 
 Please keep in mind to name the languagepages after the languagecodes used in WB(CE) 
@@ -59,21 +59,21 @@ The generated HTML should look like this:
 
 ````
 <div id="langmenu">
-	<a class="current" href ="http://mydomain.de/pages/de/startseite.php" title="Germany" >
-		<span>
-			<img src="http://mydomain.de/modules/mod_multilingual/flags/de.png" alt="Germany" title="Germany" />
-		</span>
-	</a>
-	<a  class="default" href ="http://mydomain.de/pages/en.php" title="English" >
-		<span>
-			<img src="http://mydomain.de/modules/mod_multilingual/flags/en.png" alt="English" title="English" />
-		</span>
-	</a>
-	<a  class="default" href ="http://mydomain.de/pages/fr.php" title="French" >
-		<span>
-			<img src="http://mydomain.de/modules/mod_multilingual/flags/fr.png" alt="French" title="French" />
-		</span>
-	</a>
+    <a class="current" href ="http://mydomain.de/pages/de/startseite.php" title="Germany" >
+        <span>
+            <img src="http://mydomain.de/modules/mod_multilingual/flags/de.png" alt="Germany" title="Germany" />
+        </span>
+    </a>
+    <a  class="default" href ="http://mydomain.de/pages/en.php" title="English" >
+        <span>
+            <img src="http://mydomain.de/modules/mod_multilingual/flags/en.png" alt="English" title="English" />
+        </span>
+    </a>
+    <a  class="default" href ="http://mydomain.de/pages/fr.php" title="French" >
+        <span>
+            <img src="http://mydomain.de/modules/mod_multilingual/flags/fr.png" alt="French" title="French" />
+        </span>
+    </a>
 </div>
 ````
 
@@ -123,7 +123,7 @@ array(2) {
   }
 }
 ````
- 
+
 ## New Function language_hreflang()
 
 https://support.google.com/webmasters/answer/189077?hl=en

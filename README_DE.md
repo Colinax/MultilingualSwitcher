@@ -3,18 +3,18 @@
 Grundsätzlich wird bei WBCE  für mehrsprachige Seiten kein Mod_Multilingual benötigt. Einfach mehrsprachen Support in den Einstellungen aktivieren und folgende Verzeichnisstruktur anlegen.
 
 ````
-	EN
-	|-Home
-	|-Blog
-	|-About
-	DE
-	|-Start
-	|-Blog
-	|-Über Mich
-	FR
-	.
-	.
-	.
+EN
+|-Home
+|-Blog
+|-About
+DE
+|-Start
+|-Blog
+|-Über Mich
+FR
+.
+.
+.
 ````
 
 Wobei darauf zu achten ist, das die Verzeichnisse Entsprechend der Ländercodes der jeweiligen Sprachen benannt werden. Eigentlich ist nur der Dateiname wichtig, den kann man aber erst nach erstellen der Seite getrennt bearbeiten also bitte diese Reihenfolge einhalten.  
@@ -59,21 +59,21 @@ Eine entsprechendes erzeugtes Menü sieht dann im HTML etwa so aus:
 
 ````
 <div id="langmenu">
-	<a class="current" href ="http://mydomain.de/pages/de/startseite.php" title="Germany" >
-		<span>
-			<img src="http://mydomain.de/modules/mod_multilingual/flags/de.png" alt="Germany" title="Germany" />
-		</span>
-	</a>
-	<a  class="default" href ="http://mydomain.de/pages/en.php" title="English" >
-		<span>
-			<img src="http://mydomain.de/modules/mod_multilingual/flags/en.png" alt="English" title="English" />
-		</span>
-	</a>
-	<a  class="default" href ="http://mydomain.de/pages/fr.php" title="French" >
-		<span>
-			<img src="http://mydomain.de/modules/mod_multilingual/flags/fr.png" alt="French" title="French" />
-		</span>
-	</a>
+    <a class="current" href ="http://mydomain.de/pages/de/startseite.php" title="Germany" >
+        <span>
+            <img src="http://mydomain.de/modules/mod_multilingual/flags/de.png" alt="Germany" title="Germany" />
+        </span>
+    </a>
+    <a  class="default" href ="http://mydomain.de/pages/en.php" title="English" >
+        <span>
+            <img src="http://mydomain.de/modules/mod_multilingual/flags/en.png" alt="English" title="English" />
+        </span>
+    </a>
+    <a  class="default" href ="http://mydomain.de/pages/fr.php" title="French" >
+        <span>
+            <img src="http://mydomain.de/modules/mod_multilingual/flags/fr.png" alt="French" title="French" />
+        </span>
+    </a>
 </div>
 ````
 
