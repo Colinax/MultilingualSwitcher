@@ -1,8 +1,8 @@
-Multilingual 
-=================
+# Multilingual 
 
 Basically WBCE does not need Multilingual for creating multilanguage pages. Just activate multilanguage support in settings and generate a directory structure like this.
 
+````
 	EN
 	|-Home
 	|-Blog
@@ -15,6 +15,7 @@ Basically WBCE does not need Multilingual for creating multilanguage pages. Just
 	.
 	.
 	.
+````
 
 Please keep in mind to name the languagepages after the languagecodes used in WB(CE) 
 like DE, EN, PL... Basically its just the filename that is important, but you only can set the filename manually after creating the page. 
@@ -35,11 +36,15 @@ are not connected to each other.
 
 To display the language menu you need to add the following lines to your template:
 
-	<?php  if(function_exists('language_menu')) { language_menu(); }  ?>
+````
+<?php  if(function_exists('language_menu')) { language_menu(); }  ?>
+````
 
 Possible options are:  png,gif,jpg,txt,TXT.
 
-	<?php  if(function_exists('language_menu')) { language_menu('png'); }  ?>
+````
+<?php  if(function_exists('language_menu')) { language_menu('png'); }  ?>
+````
 
 jpg - uses the taller .png flags.
 txt - Just writes the language shortcuts. (DE EN FR)
@@ -52,86 +57,82 @@ TXT uses the Title of the language pages, this feature is experimental.
 
 The generated HTML should look like this:
 
-	<div id="langmenu">
-		<a class="current" href ="http://mydomain.de/pages/de/startseite.php" title="Germany" >
-			<span>
-				<img src="http://mydomain.de/modules/mod_multilingual/flags/de.png" alt="Germany" title="Germany" />
-			</span>
-		</a>
-		<a  class="default" href ="http://mydomain.de/pages/en.php" title="English" >
-			<span>
-				<img src="http://mydomain.de/modules/mod_multilingual/flags/en.png" alt="English" title="English" />
-			</span>
-		</a>
-		<a  class="default" href ="http://mydomain.de/pages/fr.php" title="French" >
-			<span>
-				<img src="http://mydomain.de/modules/mod_multilingual/flags/fr.png" alt="French" title="French" />
-			</span>
-		</a>
-	</div>
-
-
+````
+<div id="langmenu">
+	<a class="current" href ="http://mydomain.de/pages/de/startseite.php" title="Germany" >
+		<span>
+			<img src="http://mydomain.de/modules/mod_multilingual/flags/de.png" alt="Germany" title="Germany" />
+		</span>
+	</a>
+	<a  class="default" href ="http://mydomain.de/pages/en.php" title="English" >
+		<span>
+			<img src="http://mydomain.de/modules/mod_multilingual/flags/en.png" alt="English" title="English" />
+		</span>
+	</a>
+	<a  class="default" href ="http://mydomain.de/pages/fr.php" title="French" >
+		<span>
+			<img src="http://mydomain.de/modules/mod_multilingual/flags/fr.png" alt="French" title="French" />
+		</span>
+	</a>
+</div>
+````
 
 To see the additional field in backend you need to match the folowing conditions:
 
 1. Database needs to contain the field "page_code" in table "pages".(The module installer schould create this)
 2. Multilanguage is activated in options(Settings).
 3. The file "update_keys.php" whithin folder "/modules/mod_multilingual/" does exist.(Module is installed.)
-
 		
-Show Menu2
--------------
+## Show Menu2
 
-    show_menu2(0, SM2_ROOT+1, SM2_CURR+1);
+````
+show_menu2(0, SM2_ROOT+1, SM2_CURR+1);
+````
 
 Use SM2_ROOT+1 to stop display of root level navigation (DE, EN, PL....) 
 Showmenu take care of the rest if multilanguage is enabled in Settings.    
 
+## New Function language_array()
 
-New Function language_array()
--------------------
+If you like to generate the menu Yourself, you got the option to optain all necessary data whith this Function. 
 
-If you like to generate the menu Yourself , you got the option to optain all necessary data 
-whith this Function. 
-
-language_array() gibt folgendes zurück:
+language_array() returns the following:
+````
 array(2) {
   ["EN"]=>
   array(4) {
     ["title"]=>
     string(7) "English"
     ["url"]=>
-    string(47) "http://wbce12x.norbath.de/pages/en.php"
+    string(47) "http://wbce12x.norbert-heimsath.de/pages/en.php"
     ["active"]=>
     bool(false)
     ["image"]=>
-    string(69) "http://wbce12x.norbath.de/modules/mod_multilingual/flags/en."
+    string(69) "http://wbce12x.norbert-heimsath.de/modules/mod_multilingual/flags/en."
   }
   ["DE"]=>
   array(4) {
     ["title"]=>
     string(6) "German"
     ["url"]=>
-    string(58) "http://wbce12x.norbath.de/pages/de/startseite.php"
+    string(58) "http://wbce12x.norbert-heimsath.de/pages/de/startseite.php"
     ["active"]=>
     bool(true)
     ["image"]=>
-    string(69) "http://wbce12x.norbath.de/modules/mod_multilingual/flags/de."
+    string(69) "http://wbce12x.norbert-heimsath.de/modules/mod_multilingual/flags/de."
   }
 }
+````
  
-New Function language_hreflang()
--------------------
+## New Function language_hreflang()
 
 https://support.google.com/webmasters/answer/189077?hl=en
 
 just use
 
-~~~~~~~~~~~~~
+````
 if (function_exists("language_hreflang")) language_hreflang();
-~~~~~~~~~~~~~
+````
 in your Template to get a ful scale Link list. 
 
 See the documentation in include.php for detailed Parameter list.   
-
-

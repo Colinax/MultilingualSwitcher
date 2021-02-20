@@ -1,8 +1,8 @@
-Mod_Multilingual 
-==================
+# Mod_Multilingual 
 
 Grundsätzlich wird bei WBCE  für mehrsprachige Seiten kein Mod_Multilingual benötigt. Einfach mehrsprachen Support in den Einstellungen aktivieren und folgende Verzeichnisstruktur anlegen.
 
+````
 	EN
 	|-Home
 	|-Blog
@@ -15,7 +15,8 @@ Grundsätzlich wird bei WBCE  für mehrsprachige Seiten kein Mod_Multilingual be
 	.
 	.
 	.
-	
+````
+
 Wobei darauf zu achten ist, das die Verzeichnisse Entsprechend der Ländercodes der jeweiligen Sprachen benannt werden. Eigentlich ist nur der Dateiname wichtig, den kann man aber erst nach erstellen der Seite getrennt bearbeiten also bitte diese Reihenfolge einhalten.  
 
 Am besten nimmt man hierzu das Menülink Modul, damit direkte aufrufe des Verzeichnisses auch direkt auf die Startseite der jeweiligen Sprache weitergeleitet werden. 
@@ -23,7 +24,6 @@ Am besten nimmt man hierzu das Menülink Modul, damit direkte aufrufe des Verzei
 Wichtig ist in der Verzeichnisseite sowie in den Unterseiten auch die Seitensprache richtig einzustellen. 
 
 Die Seite die im Menübaum oben steht, ist die Standardsprache und sollte auch Allgemeinen Einstellungen als Standardsprache gewählt sein. 
-
 
 Multilingual dient zwei Zwecken:
 
@@ -36,12 +36,16 @@ Wenn Sie etwas faul sind können sie auch einfach den Sprachumschalter nutzen oh
 
 Um das Sprachmenu anzuzeigen brauchen Sie folgenden Code im Template:
 
-	<?php  if(function_exists('language_menu')) { language_menu(); }  ?>
-	
+````
+<?php  if(function_exists('language_menu')) { language_menu(); }  ?>
+````
+
 Mögliche Optionen sind png,gif,jpg,txt,TXT.
- 
-	<?php  if(function_exists('language_menu')) { language_menu('png'); }  ?>
-	
+
+```` 
+<?php  if(function_exists('language_menu')) { language_menu('png'); }  ?>
+````
+
 jpg - benutzt die etwas größeren .jpg Flaggen.
 txt - gibt einfach die länder als Abkürzung aus. (DE EN FR)
 TXT - gibt die Länder als Text aus (Deutsch English Francaise)
@@ -53,27 +57,25 @@ TXT nutzt den Titel der Ordnerseiten, dieses Feature ist experimentell.
 
 Eine entsprechendes erzeugtes Menü sieht dann im HTML etwa so aus:
 
-
-	<div id="langmenu">
-		<a class="current" href ="http://mydomain.de/pages/de/startseite.php" title="Germany" >
-			<span>
-				<img src="http://mydomain.de/modules/mod_multilingual/flags/de.png" alt="Germany" title="Germany" />
-			</span>
-		</a>
-		<a  class="default" href ="http://mydomain.de/pages/en.php" title="English" >
-			<span>
-				<img src="http://mydomain.de/modules/mod_multilingual/flags/en.png" alt="English" title="English" />
-			</span>
-		</a>
-		<a  class="default" href ="http://mydomain.de/pages/fr.php" title="French" >
-			<span>
-				<img src="http://mydomain.de/modules/mod_multilingual/flags/fr.png" alt="French" title="French" />
-			</span>
-		</a>
-	</div>
-
-
-
+````
+<div id="langmenu">
+	<a class="current" href ="http://mydomain.de/pages/de/startseite.php" title="Germany" >
+		<span>
+			<img src="http://mydomain.de/modules/mod_multilingual/flags/de.png" alt="Germany" title="Germany" />
+		</span>
+	</a>
+	<a  class="default" href ="http://mydomain.de/pages/en.php" title="English" >
+		<span>
+			<img src="http://mydomain.de/modules/mod_multilingual/flags/en.png" alt="English" title="English" />
+		</span>
+	</a>
+	<a  class="default" href ="http://mydomain.de/pages/fr.php" title="French" >
+		<span>
+			<img src="http://mydomain.de/modules/mod_multilingual/flags/fr.png" alt="French" title="French" />
+		</span>
+	</a>
+</div>
+````
 
 Eine Annnmerkung für interessierte:
 
@@ -85,17 +87,15 @@ müssen folgende Bedingungen erfüllt sein:
 3. Die Datei update_keys.php im Ordner /modules/mod_multilingual/ ist vorhanden.
    (Also das Modul ist installiert.)
 
+## Show Menu2
 
-Show Menu2
--------------
-
-    show_menu2(0, SM2_ROOT+1, SM2_CURR+1);
+````
+show_menu2(0, SM2_ROOT+1, SM2_CURR+1);
+````
 
 SM2_ROOT+1 sorgt dafür, das die oberste Ebene (DE, EN, PL....) Augeblendet wird.  
 
-
-Neue Funktion language_array()
-------------------------------
+## Neue Funktion language_array()
 
 Wer gerne das Sprachmenu selber erzeugen möchte kann sich auch einfach einen Array zurückgeben lassen , der alle benötigten Daten enthält. 
 
@@ -128,8 +128,7 @@ array(2) {
 }
 ````
 
-Neue Funktion language_hreflang()
--------------------
+## Neue Funktion language_hreflang()
 
 https://support.google.com/webmasters/answer/189077?hl=de
 
@@ -141,10 +140,3 @@ if (function_exists("language_hreflang")) language_hreflang();
 Im Template eintragen um eine komplette Liste zu bekommen.  
 
 Weitere Informationen zu den Parametern der funktion finden sie in der include.php in der Quelltext Doku zu dieser Funktion
-  
-
-
-
-
- 	
-
