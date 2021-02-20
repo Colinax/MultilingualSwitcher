@@ -22,10 +22,10 @@ if(count(get_included_files()) ==1){$z="HTTP/1.0 404 Not Found";header($z);die($
 $module_directory = 'mod_multilingual';
 $module_name = 'Multilingual Switcher';
 $module_function = 'snippet';
-$module_version = '1.9.0';
+$module_version = '1.9.2';
 $module_status	= 'alpha';
 $module_platform = '2.8.3';
-$module_author = 'LuiseHahne, Norbert Heimsath, Stefanek';
+$module_author = 'LuiseHahne, Norbert Heimsath, Stefanek, Bernd';
 $module_license = 'GNU General Public License 2';
 $module_requirements = 'min. PHP 5.3 and WBCE 1.1.x or higher)';
 $module_description = 'This snippet switches between different languages and tries to keep position in page structure';

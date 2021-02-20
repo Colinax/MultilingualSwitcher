@@ -33,7 +33,7 @@ if(count($lang_array))
             $entries = array();
             $entries = get_page_list( 0 );
            // fill page_code with $page_id for default_language
-              while( list( $page_id, $val ) = each ( $entries ) )
+             foreach ($entries as $page_id => $val)
                 {
                   if( $val['language'] == DEFAULT_LANGUAGE )
                   {
