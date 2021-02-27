@@ -13,7 +13,7 @@
 $module_directory = 'mod_multilingual';
 $module_name = 'Multilingual Switcher';
 $module_function = 'snippet';
-$module_version = '1.9.3';
+$module_version = '1.9.4';
 $module_platform = '1.4.0';
 $module_author = 'LuiseHahne, NorHei, Stefanek, Bernd, Colinax';
 $module_license = 'GNU General Public License v2';
